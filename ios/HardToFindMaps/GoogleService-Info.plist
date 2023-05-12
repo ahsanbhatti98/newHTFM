@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>597446303335-7p5mqb1ress6aagbtcqk94lu42v9a7vj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.597446303335-7p5mqb1ress6aagbtcqk94lu42v9a7vj</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>597446303335-0pre6ipvnrns42pmu36q13905r9gmm6p.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBzylcvSR8HAT3SDHa1CeNl6R5FJLGzD3c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>597446303335</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hardtofindmaps.app</string>
+	<key>PROJECT_ID</key>
+	<string>hardtofindmap</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hardtofindmap.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:597446303335:ios:ef306f164f2f7a2d80bec2</string>
+</dict>
+</plist>

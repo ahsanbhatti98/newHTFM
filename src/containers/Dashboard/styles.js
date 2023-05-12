@@ -1,0 +1,169 @@
+import { StyleSheet } from "react-native";
+import { Colors, Metrics, AppStyles } from "../../theme";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  contentSec: {
+    backgroundColor: Colors.primary.white,
+    flex: 1,
+    height: "100%",
+    alignItems: "center",
+  },
+  logoSec: {
+    justifyContent: "center",
+    marginTop: 50,
+    alignItems: "center",
+    paddingBottom: Metrics.xxDoubleBaseMargin,
+  },
+  avatarContainer: {
+    alignItems: "center",
+    marginTop: Metrics.doubleBaseMargin,
+  },
+  // btnStyle: {
+  //   // width: Metrics.screenWidth / 2,
+  //   backgroundColor: Colors.secondary.btnColor,
+  //   color: Colors.primary.white,
+  //   borderRadius: Metrics.doubleBaseMargin,
+  //   // width: "100%",
+  //   shadowColor: "#000",
+  //   shadowOffset: {
+  //     width: 0,
+  //     height: 6,
+  //   },
+  //   shadowOpacity: 0.37,
+  //   shadowRadius: 7.49,
+
+  //   elevation: 12,
+  //   fontWeight: "700",
+  // },
+  submitBtn: {
+    flexDirection: "column",
+    justifyContent: "center",
+    paddingHorizontal: Metrics.xxDoubleBaseMargin + Metrics.baseMargin,
+    // marginTop: 30,
+  },
+  welcomeText:{
+    color: '#2C2E2D',
+    fontSize: 24,
+    fontWeight: '700',
+    lineHeight: 30,
+    textAlign: 'center',
+  },
+  labelText:{
+    textAlign: 'center',
+    fontSize: 15,
+    color: 'grey'
+  },
+  inp:{
+    backgroundColor: "#FFFFFF",
+    borderColor: "lightgrey",
+    borderWidth: 1,
+    borderRadius: 50,
+    width: 320
+  },
+  searchBtn:{
+    color: '#FFFFFF',
+    // marginTop: 0,
+    fontSize: 16,
+    fontWeight :'600',
+    fontFamily:'Mulish',
+    textAlign: 'center'
+  },
+  btnStyle: {
+    // width: Metrics.screenWidth / 3,
+    backgroundColor: "#3283E6",
+    borderRadius: 50,
+    width: 200,
+    fontWeight: "700",
+    height: 44,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+
+    elevation: 12,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center'
+
+  },
+  txtSec: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 15,
+    width:'100%',
+    // paddingVertical: Metrics.baseMargin,
+    paddingBottom: 180
+  },
+  searchContainer: {
+    alignItems: "center",
+    marginTop: Metrics.xDoubleBaseMargin,
+    marginBottom: Metrics.baseMargin,
+  },
+  itemContainer: {
+    alignItems: "center",
+    paddingHorizontal: Metrics.doubleBaseMargin,
+    paddingVertical: Metrics.doubleBaseMargin,
+    borderRadius: Metrics.doubleBaseMargin,
+    shadowColor: Colors.xGray,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
+    elevation: 10,
+  },
+  dText: {
+    ...AppStyles.gbLight(10, Colors.primary.black),
+  },
+  itemText: {
+    ...AppStyles.gbLight(10, Colors.primary.black),
+  },
+  myServices: {
+    ...AppStyles.gbLight(10, Colors.primary.black),
+  },
+  columeStyle: {
+    marginLeft: Metrics.xDoubleBaseMargin * 2,
+    marginTop: Metrics.smallMargin,
+  },
+  serviceContainer: {
+    borderTopWidth: 0.5,
+    borderTopColor: Colors.shadow,
+    marginTop: Metrics.xDoubleBaseMargin * 4,
+  },
+  serText: {
+    width: 40,
+    textAlign: "center",
+    ...AppStyles.gbLight(6, Colors.primary.black),
+  },
+  pickerStyle: {
+    marginTop: Metrics.smallMargin,
+    marginBottom: Metrics.baseMargin,
+    paddingVertical: Metrics.baseMargin,
+    paddingRight: Metrics.smallMargin,
+    alignSelf: "center",
+    marginRight: Metrics.smallMargin,
+  },
+  servicesStyle: {
+    marginTop: Metrics.smallMargin,
+    marginBottom: Metrics.baseMargin,
+    paddingVertical: Metrics.smallMargin,
+    paddingHorizontal: Metrics.smallMargin + Metrics.xSmallMargin,
+    borderRadius: 20,
+    backgroundColor: Colors.primary.white,
+    alignItems: "center",
+    shadowColor: Colors.xGray,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
+    marginRight: Metrics.baseMargin,
+    marginLeft: Metrics.smallMargin,
+  },
+});
+
+export default styles;

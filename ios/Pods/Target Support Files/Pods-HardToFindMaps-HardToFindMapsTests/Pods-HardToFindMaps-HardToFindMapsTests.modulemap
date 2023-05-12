@@ -1,0 +1,6 @@
+module Pods_HardToFindMaps_HardToFindMapsTests {
+  umbrella header "Pods-HardToFindMaps-HardToFindMapsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

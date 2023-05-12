@@ -1,0 +1,7 @@
+rootProject.name = 'HardToFindMaps'
+include ':react-native-apple-authentication'
+project(':react-native-apple-authentication').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-apple-authentication/android')
+include ':react-native-orientation-locker'
+project(':react-native-orientation-locker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-orientation-locker/android')
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
