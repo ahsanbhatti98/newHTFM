@@ -13,7 +13,7 @@ const dumpImage = require("../assets/images/dumpImage.png");
 const facebookLogo = require("../assets/images/facebookLogo.png");
 const googleLogo = require("../assets/images/googleLogo.png");
 const appleLogo = require("../assets/images/appleLogo.png");
-
+const deleteUser = require("../assets/images/deleteUser-icon.png");
 
 const ic_pass = require("../assets/icons/ic_password/ic_pass.png");
 const ic_invisible = require("../assets/icons/invisible/invisible.png");
@@ -172,5 +172,6 @@ export default {
   dotBtn,
   pen_icon,
   active_heart,
-  in_active_heart
+  in_active_heart,
+  deleteUser
 };

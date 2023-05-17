@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import { View, Image, ScrollView, TouchableOpacity, Text } from "react-native";
+import { View, Image, ScrollView, TouchableOpacity, Text, Platform } from "react-native";
 import { USER, DUMP, DELETE_ALL } from "../../../actions/ActionTypes";
 import constant from "../../../constants";
 import utility from "../../../utility";
@@ -186,27 +186,37 @@ class Profile extends Component {
           return (
             <>
               {activeTab == "Profile" && (
-                <ScrollView
-                  keyboardShouldPersistTaps="handled"
-                  showsVerticalScrollIndicator={false}
-                >
+                <View style={styles.buttonSec}>
 
-                  <View style={styles.buttonSec}>
+                  <ScrollView
+                    keyboardShouldPersistTaps="handled"
+                    showsVerticalScrollIndicator={false}
+
+                  >
+                    <View style={{ display: 'flex', alignItems: "flex-end", width: '100%', height: 70, marginTop: 10 }}>
+                      <TouchableOpacity>
+                        <Image source={Images.deleteUser} style={{ width: 35, height: 35 }} />
+                      </TouchableOpacity>
+                    </View>
                     <View style={styles.profilePicSec}>
                       <Image
                         source={Images.avatarIcon}
                         style={styles.profilePic}
                       />
-                      <View style={{
-                        backgroundColor: '#3283E6',
-                        borderRadius:50,
-                        padding:5,
-                        position:"absolute",
-                        right:0,
-                        bottom:5
-                      }}>
-                      <Image source={Images.pen_icon} style={styles.editIcon} />
-                      </View>
+                      {
+                        Platform.OS === "ios" ? <View /> :
+                          <View style={{
+                            backgroundColor: '#3283E6',
+                            borderRadius: 50,
+                            padding: 5,
+                            position: "absolute",
+                            right: 0,
+                            bottom: 5
+                          }}>
+                            <Image source={Images.pen_icon} style={styles.editIcon} />
+                          </View>
+                      }
+
 
                     </View>
 
@@ -247,7 +257,7 @@ class Profile extends Component {
                       alignItems: 'center',
                       backgroundColor: 'grey',
                       height: 1
-                    }}>                   
+                    }}>
                     </View>
                     <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
                       <TextInput
@@ -311,8 +321,8 @@ class Profile extends Component {
                       />
                     </View>
 
-                  </View>
-                </ScrollView>
+                  </ScrollView>
+                </View>
               )}
               {activeTab == "Settings" && (
                 <View style={[styles.buttonSec]}>
@@ -320,23 +330,31 @@ class Profile extends Component {
                     keyboardShouldPersistTaps="handled"
                     showsVerticalScrollIndicator={false}
                   >
+                     <View style={{ display: 'flex', alignItems: "flex-end", width: '100%', height: 70, marginTop: 10 }}>
+                      <TouchableOpacity>
+                        <Image source={Images.deleteUser} style={{ width: 35, height: 35 }} />
+                      </TouchableOpacity>
+                    </View>
                     {/* <View> */}
-                      <View style={styles.profilePicSec}>
-                        <Image
-                          source={Images.avatarIcon}
-                          style={styles.profilePic}
-                        />
-                         <View style={{
-                        backgroundColor: '#3283E6',
-                        borderRadius:50,
-                        padding:5,
-                        position:"absolute",
-                        right:0,
-                        bottom:5
-                      }}>
-                      <Image source={Images.pen_icon} style={styles.editIcon} />
-                      </View>
-                      </View>
+                    <View style={styles.profilePicSec}>
+                      <Image
+                        source={Images.avatarIcon}
+                        style={styles.profilePic}
+                      />
+                      {
+                        Platform.OS === "ios" ? <View /> :
+                          <View style={{
+                            backgroundColor: '#3283E6',
+                            borderRadius: 50,
+                            padding: 5,
+                            position: "absolute",
+                            right: 0,
+                            bottom: 5
+                          }}>
+                            <Image source={Images.pen_icon} style={styles.editIcon} />
+                          </View>
+                      }
+                    </View>
                     {/* </View> */}
                     <View style={styles.btnSec}>
                       <TouchableOpacity
@@ -376,18 +394,20 @@ class Profile extends Component {
                       backgroundColor: 'grey',
                       height: 1
                     }}></View>
-                     <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 10 }}>
-                    <TextfieldPlaceholder
-                      label="Licence"
-                      error="Invalid email format"
-                      type={INPUT_TYPES.OPTIONAL}
-                      identifier="Licence"
-                      editable={false}
-                      value={user && user.licence}
-                      style={styles.licenceInput}
-                    /></View>
-                    <View style={{ width: Metrics.screenWidth - Metrics.xDoubleBaseMargin * 5,
-                      justifyContent: 'center', alignSelf:'center'  }}>
+                    <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 10 }}>
+                      <TextfieldPlaceholder
+                        label="Licence"
+                        error="Invalid email format"
+                        type={INPUT_TYPES.OPTIONAL}
+                        identifier="Licence"
+                        editable={false}
+                        value={user && user.licence}
+                        style={styles.licenceInput}
+                      /></View>
+                    <View style={{
+                      width: Metrics.screenWidth - Metrics.xDoubleBaseMargin * 5,
+                      justifyContent: 'center', alignSelf: 'center'
+                    }}>
                       <TouchableOpacity onPress={() => this.onLogout(setLogin)}>
                         <View style={styles.logoutSecBtn}>
                           <Image

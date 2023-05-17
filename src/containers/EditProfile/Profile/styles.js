@@ -37,8 +37,6 @@ const styles = StyleSheet.create({
   buttonSec: {
     backgroundColor: "#fff",
     paddingHorizontal: 15,
-    paddingTop: 50,
-    paddingBottom: 120,
     height: "100%",
     width: '100%',
     display: 'flex',
