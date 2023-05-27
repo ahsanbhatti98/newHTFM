@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import { View, Image, ScrollView, TouchableOpacity, Text, Platform } from "react-native";
+import { View, Image, ScrollView, TouchableOpacity, Text, Platform, Modal, Button } from "react-native";
 import { USER, DUMP, DELETE_ALL } from "../../../actions/ActionTypes";
 import constant from "../../../constants";
 import utility from "../../../utility";
@@ -29,6 +29,9 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showModal: false,
+      email: '',
+      password:'',
       avatar: props.user && props.user.display_picture_base64,
       display_picture: props.user && props.user.display_picture_url,
       isFetching: false,
@@ -57,9 +60,10 @@ class Profile extends Component {
     const parseInfo = JSON.parse(info);
 
     console.log(
-      "🚀 ~ file: index.js ~ line 84 ~ Profile ~ user",
+      "🚀 ~ file: index.js ~ line 84 ~ Profile ~ user+++++++++",
       JSON.parse(info)
     );
+
 
     if (user) {
       const name = parseInfo?.Name.split(" ") || user?.Name.split(" ");
@@ -167,10 +171,90 @@ class Profile extends Component {
       inputFields: { ...this.state.inputFields, [key]: val },
 
     });
-
-
   };
 
+  openModal =  () => {
+    this.setState(prevState => ({
+      showModal: !prevState.showModal
+    }));
+
+  }
+  retriveData = async() => {
+    try {
+      const email = await AsyncStorage.getItem('email');
+      if (email !== null) {
+        console.log('Retrieved email:', email);
+        this.setState({ email });
+      }
+    } catch (error) {
+      console.log('Error retrieving password:', error);
+    }
+  }
+  componentDidMount() {
+ this.retriveData()
+  }
+  onSubmit = (formData) => {
+    const { first_name, last_name, email, phone, street, zip } =
+      this.state.inputFields;
+    const { user } = this.props;
+    console.log("🚀 ~ file: index.js ~ line 126 ~ Profile ~ user", user);
+
+    let payload = {
+      token: "U0FTQUlORk9URUNILUhBUkRUT0ZJTkRNQVBT",
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    console.log("🚀 ~ file: index.js ~ line 163 ~ Profile ~ payload", payload);
+
+    this.props.request(
+      constant.deleteUser,
+      "post",
+      payload,
+      DUMP,
+      true,
+      (success) =>
+      (success) => this.onLoginSuccess(setLogin, setRole, success),
+   
+    );
+  };
+  onSubmitDelete = (setLogin, setRole,) => {
+    let payload = {
+      token: "U0FTQUlORk9URUNILUhBUkRUT0ZJTkRNQVBT",
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log("payload", payload);
+    this.props.request(
+      constant.deleteUser,
+      "post",
+      payload,
+      USER,
+      true,
+      (success) => this.onLoginSuccess(setLogin, setRole, success),
+      this.onLoginError
+    );
+  };
+  onLoginSuccess = (setLogin, setRole, success) => {
+    console.log("success.......................", success);
+ if (success) {
+  this.setState({showModal: false});
+ alert("sucess")
+ this.onLogout(setLogin)
+  }else{
+    alert("error")
+  }
+}
+  // onLoginError = (error) => {
+  //   console.log("🚀 ~ file: index.js ~ line 94 ~ Login ~ error", error);
+  //   // if (error) {
+  //   //   utility.showFlashMessage("Login Failed", "danger");
+  //   // }
+  // };
+  cbOnRequestDelete = (setLogin, setRole) => {
+     this.onSubmitDelete( setLogin, setRole);
+   
+  };
   render() {
     const { user } = this.props;
     const { avatar, display_picture, isFetching, activeTab, inputFields } =
@@ -194,10 +278,64 @@ class Profile extends Component {
 
                   >
                     <View style={{ display: 'flex', alignItems: "flex-end", width: '100%', height: 70, marginTop: 10 }}>
-                      <TouchableOpacity>
+                      <TouchableOpacity onPress={() => this.openModal()}>
                         <Image source={Images.deleteUser} style={{ width: 35, height: 35 }} />
                       </TouchableOpacity>
                     </View>
+                    <Modal
+                    visible={this.state.showModal}
+                    animationType="slide"
+                    transparent={true}
+                    onRequestClose={this.openModal}
+                  >
+                    <View style={styles.modalContainer}>
+                      <View style={styles.modalContent}>
+                        <TextInput placeholder="enter your password"
+                          secureTextEntry
+                          value={this.state.password}
+                          
+                          onChangeText={(text) => this.setState({ password: text })} />
+                          {/* <TouchableOpacity
+                          onPress={() =>
+                            this.cbOnRequestDelete(setLogin, setRole)
+                          }
+                          style={styles.btnStyle}
+                         >
+                            <Text>delete user</Text>
+                          </TouchableOpacity> */}
+                           {/* <TextFieldPlaceholder
+                              label="Password"
+                              error="Invalid password format"
+                              secureTextEntry
+                              style={styles.inp}
+                              showPassword={
+                                this.state.is_visible ? false : true
+                              }
+                              value={this.state.password}
+                              onChangeText={(text) => this.setState({ password: text })} 
+                              identifier="password"
+                              // onRightPress={() =>
+                              //   this.setState({
+                              //     is_visible: !this.state.is_visible,
+                              //   })
+                              // }
+                              // rightIcon={
+                              //   this.state.is_visible
+                              //     ? Images.ic_invisible
+                              //     : Images.ic_pass
+                              // }
+                            /> */}
+                          <AppTextButton
+                        title="Delete User"
+                        onPress={() =>
+                          this.cbOnRequestDelete(setLogin, setRole)
+                        }
+                        style={{ ...styles.btnStyle, width: Metrics.screenWidth - Metrics.xDoubleBaseMargin * 5 }}
+                      />
+                        {/* <Button onPress={() => this.openModal()} title="Close" /> */}
+                      </View>
+                    </View>
+                  </Modal>
                     <View style={styles.profilePicSec}>
                       <Image
                         source={Images.avatarIcon}
@@ -330,7 +468,7 @@ class Profile extends Component {
                     keyboardShouldPersistTaps="handled"
                     showsVerticalScrollIndicator={false}
                   >
-                     <View style={{ display: 'flex', alignItems: "flex-end", width: '100%', height: 70, marginTop: 10 }}>
+                    <View style={{ display: 'flex', alignItems: "flex-end", width: '100%', height: 70, marginTop: 10 }}>
                       <TouchableOpacity>
                         <Image source={Images.deleteUser} style={{ width: 35, height: 35 }} />
                       </TouchableOpacity>
@@ -430,6 +568,6 @@ class Profile extends Component {
 }
 
 const actions = { request, success, generalUpdate };
-const mapStateToProps = ({ user }) => ({ user: user.data[0] });
+const mapStateToProps = ({ user }) => ({ user});
 
 export default connect(mapStateToProps, actions)(WithKeyboardListener(Profile));

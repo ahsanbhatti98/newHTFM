@@ -18,7 +18,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: Metrics.baseMargin,
     color: Colors.errorColor,
   },
-
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  },
+  modalContent: {
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 5,
+    width: '70%',
+    height:'40%'
+  },
   topNav: {
     borderBottomWidth: 1,
     borderColor: Colors.gray,

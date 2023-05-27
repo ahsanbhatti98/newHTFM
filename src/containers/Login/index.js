@@ -9,6 +9,9 @@ import {
   Dimensions,
   CheckBox,
   Platform,
+  Modal,
+  Button,
+  TextInput,
 } from "react-native";
 import { USER } from "../../actions/ActionTypes";
 import constant from "../../constants";
@@ -39,6 +42,7 @@ import {
   GoogleSignin,
 } from "@react-native-google-signin/google-signin";
 import { appleAuth } from '@invertase/react-native-apple-authentication';
+import AsyncStorage from "@react-native-community/async-storage";
 
 
 
@@ -48,6 +52,8 @@ class Login extends Component {
     super(props);
     this.state = {
       is_visible: true,
+      showModal: false,
+      password: ''
     };
   }
 
@@ -66,6 +72,7 @@ class Login extends Component {
     const formData = this.formHandler.onSubmitForm();
     formData && this.onSubmit(formData, setLogin, setRole);
   };
+ 
   isLandscape = () => {
     const dim = Dimensions.get("screen");
     return dim.width >= dim.height;
@@ -88,10 +95,17 @@ class Login extends Component {
       this.onLoginError
     );
   };
+
   onLoginSuccess = (setLogin, setRole, success) => {
-    console.log("success", success);
+    console.log("success.......................", success);
     setRole(success.data[0]?.Role);
     setLogin();
+    try {
+      AsyncStorage.setItem('email' , success.data[0]?.Email)
+      console.log("item save sucessfully")
+    } catch (error) {
+      console.log(error)
+    }
   };
   onLoginError = (error) => {
     console.log("🚀 ~ file: index.js ~ line 94 ~ Login ~ error", error);
@@ -99,7 +113,8 @@ class Login extends Component {
     //   utility.showFlashMessage("Login Failed", "danger");
     // }
   };
-
+ 
+  
   handleLoginGoogle = async (setLogin, setRole) => {
     try {
       await GoogleSignin.hasPlayServices();
@@ -210,6 +225,7 @@ class Login extends Component {
     }
   }
 
+
   render() {
     const { isKeyboardVisible, keyboardHeight } = this.props;
     console.log("isKeyboardVisible", keyboardHeight, isKeyboardVisible);
@@ -238,6 +254,7 @@ class Login extends Component {
                   style={styles.image}
                   resizeMode="cover"
                 >
+                
                   <View style={styles.overlay}>
                     <View>
                       <View style={styles.logoSec}>
@@ -245,9 +262,9 @@ class Login extends Component {
                           style={[
                             isKeyboardVisible
                               ? {
-                                  width: Metrics.heightRatio(150),
-                                  height: Metrics.heightRatio(150),
-                                }
+                                width: Metrics.heightRatio(150),
+                                height: Metrics.heightRatio(150),
+                              }
                               : styles.imgSec,
                             { width: 200, height: 180 },
                           ]}
@@ -436,5 +453,5 @@ class Login extends Component {
 }
 
 const actions = { request, generalUpdate };
-const mapStateToProps = ({}) => ({});
+const mapStateToProps = ({ }) => ({});
 export default connect(mapStateToProps, actions)(WithKeyboardListener(Login));

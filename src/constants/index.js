@@ -15,6 +15,7 @@ const constant = {
   addHistory: "api/add-history.php",
   removeHistory: "api/remove-history.php",
   getFavorite: "api/favourites.php",
+  deleteUser: "api/delete.php",
 
   LOCATION_TIME_OUT: 10000,
   LOCATION_MAX_AGE: 1000,

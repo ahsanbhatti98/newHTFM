@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 50,
     width: '85%',
-    marginBottom: 12,
+    marginBottom: 20,
   },
   topError: {
     backgroundColor: Colors.primary.errorBg,

@@ -45,7 +45,28 @@ const styles = StyleSheet.create({
 
 
   },
-
+  inp: {
+    backgroundColor: "#FFFFFF",
+    borderColor: "lightgrey",
+    borderWidth: 1,
+    borderRadius: 50,
+    width: '85%',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  },
+  modalContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 5,
+    width: 300,
+    height: 250 ,
+  },
   btnStyle: {
     width: Metrics.screenWidth / 2,
     height: 44,
