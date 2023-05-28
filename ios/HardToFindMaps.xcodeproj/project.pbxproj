@@ -30,6 +30,7 @@
 		DCFDE814FCB94275A191D782 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC4B0C0487404E19AADCCFE6 /* Lato-LightItalic.ttf */; };
 		F1B4657769C44C8892A45235 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFBBC8B957F548FCB4F73523 /* Lato-Regular.ttf */; };
 		F7D3167C4DA048DE89A8724D /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57C15F85528A4C5CB365A0D8 /* Lato-HairlineItalic.ttf */; };
+		B7C367D798604EB8A3DC13EC /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DF68F222F9E4BEF9560F6E0 /* Mulish-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HardToFindMaps/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = HardToFindMaps/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = HardToFindMaps/main.m; sourceTree = "<group>"; };
+		18436BB12A23D71300D49481 /* HardToFindMaps.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HardToFindMaps.entitlements; path = HardToFindMaps/HardToFindMaps.entitlements; sourceTree = "<group>"; };
 		1B4B3A0525FA6EB60072356D /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		1B6C561D7372456D8FE9F864 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BoldItalic.ttf"; path = "../assets/fonts/Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
 		1FE2ECFDD0D14985942C12AC /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BlackItalic.ttf"; path = "../assets/fonts/Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		EDCB21564C334B74B9949B2F /* Lato-Hairline.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Hairline.ttf"; path = "../assets/fonts/Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		FA431AC513E24410868F3FEE /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
 		FC4B0C0487404E19AADCCFE6 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-LightItalic.ttf"; path = "../assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		5DF68F222F9E4BEF9560F6E0 /* Mulish-Regular.ttf */ = {isa = PBXFileReference; name = "Mulish-Regular.ttf"; path = "../assets/fonts/Mulish-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,7 @@
 				FA431AC513E24410868F3FEE /* Lato-Light.ttf */,
 				FC4B0C0487404E19AADCCFE6 /* Lato-LightItalic.ttf */,
 				AFBBC8B957F548FCB4F73523 /* Lato-Regular.ttf */,
+				5DF68F222F9E4BEF9560F6E0 /* Mulish-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -157,6 +161,7 @@
 		13B07FAE1A68108700A75B9A /* HardToFindMaps */ = {
 			isa = PBXGroup;
 			children = (
+				18436BB12A23D71300D49481 /* HardToFindMaps.entitlements */,
 				397B28A429DB52AF000AF793 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -320,7 +325,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 6D9QXWTC9M;
+						DevelopmentTeam = 339AKWSW83;
 						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
@@ -381,6 +386,7 @@
 				61ED16278F884FE6B97D07A3 /* Lato-Light.ttf in Resources */,
 				DCFDE814FCB94275A191D782 /* Lato-LightItalic.ttf in Resources */,
 				F1B4657769C44C8892A45235 /* Lato-Regular.ttf in Resources */,
+				B7C367D798604EB8A3DC13EC /* Mulish-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,10 +676,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HardToFindMaps/HardToFindMaps.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 6D9QXWTC9M;
+				DEVELOPMENT_TEAM = 339AKWSW83;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HardToFindMaps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -702,10 +709,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HardToFindMaps/HardToFindMaps.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 6D9QXWTC9M;
+				DEVELOPMENT_TEAM = 339AKWSW83;
 				INFOPLIST_FILE = HardToFindMaps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

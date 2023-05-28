@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     marginTop: -5,
     fontSize: 20,
     fontWeight: '700',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
     lineHeight: 25,
     // marginBottom: -5
 
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     color: '#2C2E2D',
     fontSize: 15,
     fontWeight: '400',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
     lineHeight: 22,
     marginTop: 5
   },

@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     // marginTop: 0,
     fontSize: 16,
     fontWeight :'600',
-    fontFamily:'Mulish',
+    fontFamily:'Mulish-Regular',
     textAlign: 'center'
   },
   btnStyle: {

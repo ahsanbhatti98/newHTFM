@@ -213,9 +213,9 @@ class Login extends Component {
       });
 
       const { email, fullName } = appleAuthRequestResponse.user;
-      console.log(`Logged in with Apple: ${email}, ${fullName}`);
+      console.log(`Logged in with Apple: ${email}, ${fullName}`,appleAuthRequestResponse);
     } catch (error) {
-      console.error(error);
+      console.error('erooooo------',error);
     }
   }
   componentDidUpdate(prevProps) {
@@ -436,7 +436,7 @@ class Login extends Component {
                             }}
                           >
                             {" "}
-                            Sign Up{" "}
+                            Sgn Up{" "}
                           </Text>
                         </Text>
                       </TouchableOpacity>

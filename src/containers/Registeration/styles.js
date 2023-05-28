@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     color: '#2C2D2D',
     fontSize: 32,
     fontWeight: '700',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
     lineHeight: 40,
     marginTop: -20
   }, 
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight :'600',
-    fontFamily:'Mulish',
+    fontFamily:'Mulish-Regular',
   },
   txtSec: {
     justifyContent: "center",
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 12,
     marginTop: 12,
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
 
   },
   imgSec: {

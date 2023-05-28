@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: Metrics.baseMargin,
   },
   historyItemSec: {
-    backgroundColor: '#fff',
-    flexDirection: 'row',
+    backgroundColor: "#fff",
+    flexDirection: "row",
     margin: 10,
     padding: 15,
     height: 100,
@@ -35,20 +35,19 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: -5,
     fontSize: 20,
-    fontWeight: '700',
-    fontFamily: 'Mulish',
+    fontWeight: "700",
+    fontFamily: "Mulish-Regular",
     lineHeight: 25,
     // marginBottom: 5
-
   },
 
   historyItemDesc: {
-    color: '#2C2E2D',
+    color: "#2C2E2D",
     fontSize: 15,
-    fontWeight: '400',
-    fontFamily: 'Mulish',
+    fontWeight: "400",
+    fontFamily: "Mulish-Regular",
     lineHeight: 22,
-    marginTop: 5
+    marginTop: 5,
   },
   logoSec: {
     justifyContent: "center",

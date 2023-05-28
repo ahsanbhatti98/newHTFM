@@ -67,14 +67,18 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Hard To Find Maps want's access to your current location to show you nearby places and landmarks accurately on the map.</string>
-  <key>NSLocationAlwaysUsageDescription</key>
-  <string>Hard To Find Maps want's access to your current location to show you nearby places and landmarks accurately on the map.</string>
-  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-  <string>Hard To Find Maps want's access to your current location to show you nearby places and landmarks accurately on the map.</string>
-  <key>NSPhotoLibraryUsageDescription</key>
-  <string>Hard To Find Maps want's to access your photos to change/update profile photos</string>
-  
-  
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hard To Find Maps want's access to your current location to show you nearby places and landmarks accurately on the map.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Hard To Find Maps want's access to your current location to show you nearby places and landmarks accurately on the map.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Hard To Find Maps want's to access your photos to change/update profile photos</string>
+
+	<key>NSAppleSignInRequestClientBundleID</key>
+    <string>{YOUR_APP_BUNDLE_IDENTIFIER}</string>
+    <key>NSAppleSignInProviderToken</key>
+    <string>{YOUR_APP_SERVICES_ID}</string>
+
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Black.ttf</string>
@@ -87,6 +91,7 @@
 		<string>Lato-Light.ttf</string>
 		<string>Lato-LightItalic.ttf</string>
 		<string>Lato-Regular.ttf</string>
+		<string>Mulish-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

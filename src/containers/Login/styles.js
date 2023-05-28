@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     color: '#2C2D2D',
     fontSize: 24,
     fontWeight: '700',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
     textAlign: 'center',
     marginTop: -15,
   },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     color: '#2C2D2D',
     fontSize: 13,
     fontWeight: '700',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
     marginTop: -10,
     alignSelf: 'flex-start',
     margin: 5,
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     color:  '#2C2E2D',
     fontSize: 14,
     fontWeight: '500',
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
     lineHeight: 18,
     
   },
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight :'600',
-    fontFamily:'Mulish',
+    fontFamily:'Mulish-Regular',
   },
   fbButton: {
     backgroundColor: "#FFFFFF",
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 12,
     marginTop: 12,
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
 
   },
   googleBtn: {
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
     color: '#393A3A',
     fontWeight: '300',
     fontSize: 16,
-    fontFamily: 'Mulish',
+    fontFamily: 'Mulish-Regular',
   },
 });
 
