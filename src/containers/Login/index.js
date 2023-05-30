@@ -41,10 +41,8 @@ import {
   statusCodes,
   GoogleSignin,
 } from "@react-native-google-signin/google-signin";
-import { appleAuth } from '@invertase/react-native-apple-authentication';
+import { appleAuth } from "@invertase/react-native-apple-authentication";
 import AsyncStorage from "@react-native-community/async-storage";
-
-
 
 class Login extends Component {
   static contextType = NavigationContext;
@@ -53,7 +51,7 @@ class Login extends Component {
     this.state = {
       is_visible: true,
       showModal: false,
-      password: ''
+      password: "",
     };
   }
 
@@ -72,7 +70,7 @@ class Login extends Component {
     const formData = this.formHandler.onSubmitForm();
     formData && this.onSubmit(formData, setLogin, setRole);
   };
- 
+
   isLandscape = () => {
     const dim = Dimensions.get("screen");
     return dim.width >= dim.height;
@@ -101,10 +99,10 @@ class Login extends Component {
     setRole(success.data[0]?.Role);
     setLogin();
     try {
-      AsyncStorage.setItem('email' , success.data[0]?.Email)
-      console.log("item save sucessfully")
+      AsyncStorage.setItem("email", success.data[0]?.Email);
+      console.log("item save sucessfully");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
   onLoginError = (error) => {
@@ -113,8 +111,7 @@ class Login extends Component {
     //   utility.showFlashMessage("Login Failed", "danger");
     // }
   };
- 
-  
+
   handleLoginGoogle = async (setLogin, setRole) => {
     try {
       await GoogleSignin.hasPlayServices();
@@ -205,26 +202,31 @@ class Login extends Component {
   scrollToInitialPosition = () => {
     this.scrollViewRef && this.scrollViewRef.scrollToEnd();
   };
-  handleAppleSignIn = async () => {
+  handleAppleSignIn = async (setLogin, setRole) => {
     try {
       const appleAuthRequestResponse = await appleAuth.performRequest({
         requestedOperation: appleAuth.Operation.LOGIN,
         requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
       });
 
-      const { email, fullName } = appleAuthRequestResponse.user;
-      console.log(`Logged in with Apple: ${email}, ${fullName}`,appleAuthRequestResponse);
+      const { email, fullName, identityToken } = appleAuthRequestResponse;
+      console.log(
+        `Logged in with Apple: ${email}, ${
+          fullName?.givenName + " " + fullName?.familyName
+        }`,
+        appleAuthRequestResponse
+      );
+      this.getInfoFromToken(identityToken, setLogin, setRole);
     } catch (error) {
-      console.error('erooooo------',error);
+      console.error("erooooo------", error);
     }
-  }
+  };
   componentDidUpdate(prevProps) {
     const { isKeyboardVisible } = this.props;
     if (isKeyboardVisible !== prevProps.isKeyboardVisible) {
       setTimeout(() => this.scrollToInitialPosition(), 1000);
     }
   }
-
 
   render() {
     const { isKeyboardVisible, keyboardHeight } = this.props;
@@ -254,7 +256,6 @@ class Login extends Component {
                   style={styles.image}
                   resizeMode="cover"
                 >
-                
                   <View style={styles.overlay}>
                     <View>
                       <View style={styles.logoSec}>
@@ -262,9 +263,9 @@ class Login extends Component {
                           style={[
                             isKeyboardVisible
                               ? {
-                                width: Metrics.heightRatio(150),
-                                height: Metrics.heightRatio(150),
-                              }
+                                  width: Metrics.heightRatio(150),
+                                  height: Metrics.heightRatio(150),
+                                }
                               : styles.imgSec,
                             { width: 200, height: 180 },
                           ]}
@@ -453,5 +454,5 @@ class Login extends Component {
 }
 
 const actions = { request, generalUpdate };
-const mapStateToProps = ({ }) => ({});
+const mapStateToProps = ({}) => ({});
 export default connect(mapStateToProps, actions)(WithKeyboardListener(Login));
